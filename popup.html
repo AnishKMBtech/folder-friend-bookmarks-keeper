@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmark Organizer Pro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <h1 class="title">
+          <span class="icon">📚</span>
+          Bookmark Organizer Pro
+        </h1>
+        <div class="header-actions">
+          <button class="btn btn-secondary" id="importBtn" title="Import Bookmarks">
+            <span class="icon">📥</span>
+          </button>
+          <button class="btn btn-secondary" id="exportBtn" title="Export Bookmarks">
+            <span class="icon">📤</span>
+          </button>
+          <button class="btn btn-primary" id="newFolderBtn" title="New Folder">
+            <span class="icon">📁</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="search-container">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Search bookmarks..." />
+          <button class="clear-search" id="clearSearch" title="Clear search">×</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="breadcrumb" id="breadcrumb">
+        <button class="breadcrumb-item active" data-folder-id="1">
+          <span class="icon">🏠</span>
+          Home
+        </button>
+      </div>
+
+      <div class="bookmark-list" id="bookmarkList">
+        <div class="loading">
+          <div class="loading-spinner"></div>
+          <p>Loading bookmarks...</p>
+        </div>
+      </div>
+    </main>
+
+    <div class="footer">
+      <div class="stats" id="stats">
+        <span id="bookmarkCount">0 bookmarks</span>
+        <span id="folderCount">0 folders</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for creating new folder -->
+  <div class="modal" id="newFolderModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Create New Folder</h3>
+        <button class="modal-close" id="closeModal">×</button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="folderNameInput" placeholder="Folder name..." />
+        <div class="modal-actions">
+          <button class="btn btn-secondary" id="cancelFolder">Cancel</button>
+          <button class="btn btn-primary" id="createFolder">Create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden file input for import -->
+  <input type="file" id="fileInput" accept=".json" style="display: none;" />
+
+  <script src="popup.js"></script>
+</body>
+</html>

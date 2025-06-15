@@ -1,0 +1,18 @@
+
+{
+  "manifest_version": 3,
+  "name": "Bookmark Organizer Pro",
+  "version": "1.0.0",
+  "description": "Organize, manage, and sync your bookmarks with folders, import/export, and advanced search",
+  "permissions": [
+    "bookmarks",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Bookmark Organizer Pro"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
